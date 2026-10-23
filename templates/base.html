@@ -3,154 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wizard-KI-Connect | v3.0 Immersive</title>
+    <title>Wizard-KI-Connect | v3.0</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-
     <style>
-        :root {
-            --wizard-blue: #0072C6;
-            --wizard-orange: #FF6600;
-            --glass-bg: rgba(255, 255, 255, 0.05);
-            --glass-border: rgba(255, 255, 255, 0.1);
-            --glass-highlight: rgba(255, 255, 255, 0.15);
-            --text-main: #ffffff;
-            --text-muted: #a0a0a0;
-        }
-
-        body {
-            background: radial-gradient(circle at top right, #004b87 0%, #001a33 100%);
-            font-family: 'Inter', sans-serif;
-            color: var(--text-main);
-            min-height: 100vh;
-        }
-
-        .glass-card {
-            background: var(--glass-bg);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid var(--glass-border);
-            border-radius: 16px;
-            box-shadow: 0 4px 24px rgba(0,0,0,0.2);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-
-        .glass-card:hover {
-            border-color: var(--glass-highlight);
-            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
-        }
-
-        .wizard-header {
-            background: rgba(0, 26, 51, 0.8);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid var(--glass-border);
-            padding: 15px 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        .logo-text {
-            font-weight: 800;
-            color: white;
-            letter-spacing: -0.5px;
-        }
-        .logo-text span { color: var(--wizard-orange); }
-
-        .hero-kai {
-            background: linear-gradient(135deg, var(--wizard-blue) 0%, #004b87 100%);
-            border: 1px solid rgba(255,255,255,0.2);
-            position: relative;
-            overflow: hidden;
-        }
-        .hero-kai::before {
-            content: '';
-            position: absolute;
-            top: -50%; right: -50%;
-            width: 100%; height: 100%;
-            background: radial-gradient(circle, rgba(255,102,0,0.15) 0%, transparent 70%);
-            pointer-events: none;
-        }
-
-        .btn-wizard {
-            background: var(--wizard-orange);
-            color: white;
-            font-weight: 700;
-            border: none;
-            border-radius: 8px;
-            padding: 10px 24px;
-            box-shadow: 0 4px 15px rgba(255, 102, 0, 0.4);
-            transition: all 0.2s;
-        }
-        .btn-wizard:hover {
-            background: #e65c00;
-            transform: translateY(-2px);
-            color: white;
-            box-shadow: 0 6px 20px rgba(255, 102, 0, 0.6);
-        }
-
-        .sidebar-item {
-            display: flex;
-            align-items: center;
-            padding: 12px;
-            border-bottom: 1px solid var(--glass-border);
-            transition: background 0.2s;
-        }
-        .sidebar-item:last-child { border-bottom: none; }
-        .sidebar-item:hover { background: var(--glass-highlight); }
-
-        .feed-card {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid var(--glass-border);
-            border-radius: 12px;
-            margin-bottom: 20px;
-        }
-        .feed-header {
-            display: flex;
-            justify-content: space-between;
-            padding: 15px;
-            border-bottom: 1px solid var(--glass-border);
-        }
-        .feed-body { padding: 15px; }
-
-        .badge-xp {
-            background: rgba(255, 102, 0, 0.2);
-            color: var(--wizard-orange);
-            border: 1px solid var(--wizard-orange);
-        }
-
-        .modal-content {
-            background: #1a1a1a;
-            border: 1px solid var(--glass-border);
-            color: white;
-        }
-        .modal-header { border-bottom: 1px solid var(--glass-border); }
-        .modal-footer { border-top: 1px solid var(--glass-border); }
-        input, textarea, select {
-            background: rgba(255,255,255,0.05);
-            border: 1px solid var(--glass-border);
-            color: white;
-        }
-        input:focus, textarea:focus, select:focus {
-            background: rgba(255,255,255,0.1);
-            border-color: var(--wizard-orange);
-            color: white;
-            box-shadow: none;
-        }
+        :root { --wizard-blue: #0072C6; --wizard-orange: #FF6600; --glass-bg: rgba(255, 255, 255, 0.05); --glass-border: rgba(255, 255, 255, 0.1); --text-main: #ffffff; --text-muted: #a0a0a0; }
+        body { background: radial-gradient(circle at top right, #004b87 0%, #001a33 100%); font-family: 'Inter', sans-serif; color: var(--text-main); min-height: 100vh; }
+        .wizard-header { background: rgba(0, 26, 51, 0.8); backdrop-filter: blur(10px); border-bottom: 1px solid var(--glass-border); padding: 15px 0; }
+        .logo-text { font-weight: 800; color: white; } .logo-text span { color: var(--wizard-orange); }
+        .btn-wizard { background: var(--wizard-orange); color: white; font-weight: 700; border: none; border-radius: 8px; padding: 10px 24px; }
+        .btn-wizard:hover { background: #e65c00; color: white; }
+        .glass-card { background: var(--glass-bg); backdrop-filter: blur(12px); border: 1px solid var(--glass-border); border-radius: 16px; box-shadow: 0 4px 24px rgba(0,0,0,0.2); }
+        input, textarea, select { background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border); color: white; }
+        input:focus, textarea:focus, select:focus { background: rgba(255,255,255,0.1); border-color: var(--wizard-orange); color: white; }
     </style>
 </head>
 <body>
-
     <nav class="wizard-header">
         <div class="container d-flex justify-content-between align-items-center">
-            <a class="navbar-brand logo-text" href="/">
-                🧙‍♂️ Wizard-KI-Connect <span>v3.0</span>
-            </a>
+            <a class="navbar-brand logo-text" href="/">🧙‍♂️ Wizard-KI-Connect <span>v3.0</span></a>
             <div class="d-flex align-items-center gap-3">
                 {% if session.get('user') %}
-                <div class="text-end d-none d-md-block">
-                    <div style="font-size: 0.8rem; color: var(--text-muted);">Dein Ruf</div>
-                    <div style="font-weight: 700; color: var(--wizard-orange);">🔥 250 XP</div>
-                </div>
+                <div class="text-end d-none d-md-block"><div style="font-size: 0.8rem; color: var(--text-muted);">Dein Ruf</div><div style="font-weight: 700; color: var(--wizard-orange);">🔥 250 XP</div></div>
                 <a href="/logout" class="btn btn-sm btn-outline-light">Logout</a>
                 {% else %}
                 <a href="/login" class="btn btn-sm btn-wizard">Login</a>
@@ -158,180 +32,9 @@
             </div>
         </div>
     </nav>
-
     <div class="container mt-4">
-        <div class="row g-4">
-
-            {% if session.get('user') %}
-            <div class="col-lg-3">
-                <div class="glass-card p-3 mb-4 text-center">
-                    <img src="https://ui-avatars.com/api/?name={{ user.name }}&background=0072C6&color=fff&size=128" class="rounded-circle mb-3 border border-3 border-dark" alt="Avatar">
-                    <h5 class="fw-bold mb-1">{{ user.name }}</h5>
-                    <span class="badge bg-danger mb-2">{{ user.rolle.upper() }}</span>
-                    <div class="text-muted small">{{ user.email }}</div>
-                </div>
-
-                <div class="glass-card p-0 overflow-hidden mb-4">
-                    <div class="p-3 border-bottom border-secondary bg-dark bg-opacity-25">
-                        <h6 class="mb-0 fw-bold">🏆 KI-Ranking</h6>
-                    </div>
-                    {% for p in leaderboard %}
-                    <div class="sidebar-item">
-                        <div class="me-3 text-warning" style="width: 20px;">
-                            {% if loop.index == 1 %}🥇{% elif loop.index == 2 %}🥈{% elif loop.index == 3 %}🥉{% else %}{{ loop.index }}{% endif %}
-                        </div>
-                        <div class="flex-grow-1">
-                            <div class="fw-bold small">{{ p.name }}</div>
-                            <div class="text-muted" style="font-size: 0.7rem;">{{ p.badge }}</div>
-                        </div>
-                        <div class="badge badge-xp rounded-pill">{{ p.score }}</div>
-                    </div>
-                    {% endfor %}
-                </div>
-
-                {% if user.rolle == 'admin' %}
-                <div class="glass-card p-3 border-warning">
-                    <div class="text-warning fw-bold mb-2">👑 Admin Zone</div>
-                    <a href="#" class="text-decoration-none text-white d-block small">🧹 Trash leeren</a>
-                </div>
-                {% endif %}
-            </div>
-            {% endif %}
-
-            <div class="col-lg-9">
-
-                {% if session.get('user') %}
-                <div class="glass-card hero-kai p-4 mb-4">
-                    <div class="d-flex align-items-center mb-3">
-                        <img src="{{ daily_prompt.image }}" class="rounded-circle me-3" style="width: 48px; height: 48px; border: 2px solid white;">
-                        <div>
-                            <h5 class="mb-0 fw-bold">🤖 KAI's Daily Briefing</h5>
-                            <small class="opacity-75">Kuratiert von KI für dich</small>
-                        </div>
-                    </div>
-                    <p class="lead mb-3" style="font-size: 1.2rem;">{{ daily_prompt.content }}</p>
-                    <div class="d-flex justify-content-between align-items-center mt-4">
-                        <span class="badge bg-light text-dark fw-bold">Top UseCase: Excel Dashboarding</span>
-                        <a href="{{ channel_url }}" target="_blank" class="btn btn-light fw-bold">
-                            Zum War Room ⚡
-                        </a>
-                    </div>
-                </div>
-
-                <div class="d-flex justify-content-between align-items-center mb-4">
-                    <h4 class="fw-bold m-0">Community Feed</h4>
-                    <button class="btn btn-wizard" data-bs-toggle="modal" data-bs-target="#feedbackModal">
-                        + Neuer Beitrag
-                    </button>
-                </div>
-
-                <ul class="nav nav-pills mb-4 gap-2" id="pills-tab" role="tablist">
-                    <li class="nav-item"><button class="nav-link active bg-white text-dark" id="all-tab" data-bs-toggle="pill" data-bs-target="#all">🌍 Alles</button></li>
-                    <li class="nav-item"><button class="nav-link bg-secondary text-white" id="curiosities-tab" data-bs-toggle="pill" data-bs-target="#curiosities">🤡 Kurioses</button></li>
-                    <li class="nav-item"><button class="nav-link bg-secondary text-white" id="usecases-tab" data-bs-toggle="pill" data-bs-target="#usecases">🚀 UseCases</button></li>
-                </ul>
-
-                <div class="tab-content" id="pills-tabContent">
-                    <div class="tab-pane fade show active" id="all">
-                        {% for post in all_posts %}
-                        <div class="feed-card">
-                            <div class="feed-header">
-                                <div class="d-flex align-items-center">
-                                    <img src="https://ui-avatars.com/api/?name={{ post.author }}&background=FF6600&color=fff&size=40" class="rounded-circle me-2" alt="">
-                                    <div>
-                                        <div class="fw-bold">{{ post.author }}</div>
-                                        <div class="text-muted small">{{ post.date }}</div>
-                                    </div>
-                                </div>
-                                <span class="badge bg-secondary">{{ post.category }}</span>
-                            </div>
-                            <div class="feed-body">
-                                {% if post.image_html %}
-                                    {{ post.image_html | safe }}
-                                {% endif %}
-                                <p class="mt-2 mb-0">{{ post.content }}</p>
-                                <div class="mt-3 d-flex gap-3">
-                                    <button class="btn btn-sm btn-outline-light">👍 Like</button>
-                                    <button class="btn btn-sm btn-outline-light">💬 Reply</button>
-                                </div>
-                            </div>
-                        </div>
-                        {% endfor %}
-                    </div>
-
-                    <div class="tab-pane fade" id="curiosities">
-                        <p class="text-center text-muted py-5">Keine Kuriositäten sichtbar.</p>
-                    </div>
-
-                    <div class="tab-pane fade" id="usecases">
-                        <p class="text-center text-muted py-5">Keine UseCases sichtbar.</p>
-                    </div>
-                </div>
-                {% endif %}
-
-                {% if not session.get('user') %}
-                <div class="text-center py-5">
-                    <h2 class="mb-4">Willkommen bei Wizard-KI-Connect</h2>
-                    <p class="lead mb-4">Dein internes Portal für KI-Erfahrungen, Feedback und Community.</p>
-                    <a href="/login" class="btn btn-wizard btn-lg">Jetzt einloggen</a>
-                </div>
-                {% endif %}
-
-            </div>
-        </div>
+        {% block content %}{% endblock %}
     </div>
-
-    <div class="modal fade" id="feedbackModal" tabindex="-1">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <form action="/submit_feedback" method="POST">
-                    <input type="hidden" name="image_data" id="hiddenImageData">
-                    <div class="modal-header">
-                        <h5 class="modal-title">✨ Beitrag einreichen</h5>
-                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="mb-3">
-                            <label class="form-label">Titel</label>
-                            <input type="text" name="title" class="form-control" required>
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label">Beschreibung</label>
-                            <textarea name="content" class="form-control" rows="3" required></textarea>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="submit" class="btn btn-wizard w-100">Absenden</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        function showPasteTip() { alert("Tipp: Win+Shift+S -> Ctrl+V"); }
-        document.addEventListener('paste', function(e) {
-            const modal = document.getElementById('feedbackModal');
-            if (!modal.classList.contains('show')) return;
-            const items = (e.clipboardData || e.originalEvent.clipboardData).items;
-            for (let item of items) {
-                if (item.kind === 'file' && item.type.includes('image/')) {
-                    e.preventDefault();
-                    const blob = item.getAsFile();
-                    const reader = new FileReader();
-                    reader.onload = function(event) {
-                        const img = document.getElementById('previewImg');
-                        if(img) {
-                            img.src = event.target.result;
-                            document.getElementById('imagePreviewArea').classList.remove('d-none');
-                        }
-                    };
-                    reader.readAsDataURL(blob);
-                    return;
-                }
-            }
-        });
-    </script>
 </body>
 </html>

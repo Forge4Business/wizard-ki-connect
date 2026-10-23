@@ -1,14 +1,10 @@
 {% extends "base.html" %}
-
 {% block content %}
-<div class="text-center">
-    <h1 class="display-4">Willkommen bei Wizard-KI-Connect</h1>
-    <p class="lead">Dein firmeninternes Feedback- &amp; KI-Community Portal.</p>
-    <hr class="my-4">
-    <p>Verbinde dich mit deinem Team. Teile deine KI-Erfahrungen.</p>
-    <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-        <a class="btn btn-primary btn-lg px-4" href="/login">Einloggen</a>
-        <a class="btn btn-outline-secondary btn-lg px-4" href="/register">Registrieren</a>
+<div class="row justify-content-center mt-5">
+    <div class="col-md-8 text-center">
+        <h1 class="display-4 fw-bold mb-4">Willkommen bei Wizard-KI-Connect</h1>
+        <p class="lead mb-5 text-white-50">Dein internes Portal für KI-Erfahrungen, Feedback und Community.</p>
+        <a href="/login" class="btn btn-wizard btn-lg px-5">Jetzt einloggen</a>
     </div>
 </div>
 {% endblock %}
