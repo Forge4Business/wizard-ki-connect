@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row justify-content-center mt-5">
+    <div class="col-md-6 col-lg-4">
+        <div class="glass-card p-4">
+            <div class="text-center mb-4">
+                <h3 class="fw-bold">Willkommen zurück</h3>
+                <p class="text-muted">Bitte melde dich an, um fortzufahren.</p>
+            </div>
+
+            <form method="POST" action="/login">
+                <div class="mb-3">
+                    <label class="form-label">Benutzername</label>
+                    <input type="text" name="username" class="form-control" placeholder="z.B. irsan" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Passwort</label>
+                    <input type="password" name="password" class="form-control" placeholder="Dein Passwort" required>
+                </div>
+                <button type="submit" class="btn btn-wizard w-100">Einloggen</button>
+            </form>
+
+            <div class="text-center mt-3">
+                <small class="text-muted">Test-User: irsan / admin123</small>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
