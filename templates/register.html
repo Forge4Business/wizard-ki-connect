@@ -1,31 +1,17 @@
 {% extends "base.html" %}
-
+{% block title %}Registrieren · Wizard-KI-Connect{% endblock %}
 {% block content %}
-<div class="row justify-content-center mt-5">
-    <div class="col-md-6 col-lg-4">
-        <div class="card shadow">
-            <div class="card-body">
-                <h3 class="card-title text-center mb-4">Registrieren ✨</h3>
-                <form method="POST">
-                    <div class="mb-3">
-                        <label>Benutzername</label>
-                        <input type="text" name="username" class="form-control" required>
-                    </div>
-                    <div class="mb-3">
-                        <label>E-Mail</label>
-                        <input type="email" name="email" class="form-control" required>
-                    </div>
-                    <div class="mb-3">
-                        <label>Passwort</label>
-                        <input type="password" name="password" class="form-control" required>
-                    </div>
-                    <button type="submit" class="btn btn-success w-100">Account erstellen</button>
-                </form>
-                <div class="text-center mt-3">
-                    <small>Schon ein Account? <a href="/login">Hier einloggen</a></small>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+<div class="row justify-content-center mt-5"><div class="col-md-6 col-lg-4">
+    <form class="glass p-4" method="post">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+        <h2 class="h3 fw-bold mb-4">Account erstellen</h2>
+        <label class="form-label" for="username">Benutzername</label>
+        <input class="form-control mb-3" id="username" name="username" minlength="3" required>
+        <label class="form-label" for="email">E-Mail</label>
+        <input class="form-control mb-3" id="email" name="email" type="email" required>
+        <label class="form-label" for="password">Passwort (mindestens 10 Zeichen)</label>
+        <input class="form-control mb-4" id="password" name="password" type="password" minlength="10" autocomplete="new-password" required>
+        <button class="btn btn-wizard w-100" type="submit">Registrieren</button>
+    </form>
+</div></div>
 {% endblock %}
