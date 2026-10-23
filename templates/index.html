@@ -1,10 +1,11 @@
 {% extends "base.html" %}
 {% block content %}
-<div class="row justify-content-center mt-5">
-    <div class="col-md-8 text-center">
-        <h1 class="display-4 fw-bold mb-4">Willkommen bei Wizard-KI-Connect</h1>
-        <p class="lead mb-5 text-white-50">Dein internes Portal für KI-Erfahrungen, Feedback und Community.</p>
-        <a href="/login" class="btn btn-wizard btn-lg px-5">Jetzt einloggen</a>
+<section class="glass text-center p-5 mt-5">
+    <h1 class="display-5 fw-bold">Wizard-KI-Connect</h1>
+    <p class="lead text-soft">Das interne Portal für KI-Erfahrungen, Use Cases und Fundstücke.</p>
+    <div class="d-flex gap-2 justify-content-center mt-4">
+        <a class="btn btn-wizard btn-lg" href="{{ url_for('web.login') }}">Einloggen</a>
+        <a class="btn btn-outline-light btn-lg" href="{{ url_for('web.register') }}">Registrieren</a>
     </div>
-</div>
+</section>
 {% endblock %}
